@@ -10,6 +10,7 @@
 
 @interface WPNewsUITests : XCTestCase
 @property (strong, retain) XCUIApplication* app;
+@property (strong, retain) NSDateFormatter* dateFormat;
 @end
 
 @implementation WPNewsUITests
@@ -23,6 +24,11 @@
     self.app = [[XCUIApplication alloc] init];
     self.app.launchArguments = @[ @"TESTING" ];
     [self.app launch];
+    
+    // hardcoded duplicate NSDateFormatter
+    self.dateFormat = [[NSDateFormatter alloc] init];
+    [self.dateFormat setDateFormat:@"yyyy-dd-MM H:mm:ss"]; //2014-02-12 20:29:36
+
 }
 
 - (void)tearDown {
@@ -59,6 +65,19 @@
     
     NSString* expectedContentSegment = @"An inverse relationship seems to exist between the length of time since a Clinton has orbited the White House and the power held by the mythology of Matt Drudge";
     XCTAssertTrue([self.app.textViews[@"body-text"].value containsString:expectedContentSegment]);
+}
+
+- (void)testUponLoadArticlesAreSortedByDateDescending {
+    XCUIElement* article1Element = [self.app.tables[@"news-article-table"].cells elementBoundByIndex:0];
+    XCUIElement* article2Element = [self.app.tables[@"news-article-table"].cells elementBoundByIndex:1];
+    
+    NSString* article1DateString = article1Element.staticTexts[@"date"].label;
+    NSString* article2DateString = article2Element.staticTexts[@"date"].label;
+    
+    NSDate *date1 = [self.dateFormat dateFromString:article1DateString];
+    NSDate *date2 = [self.dateFormat dateFromString:article2DateString];
+
+    XCTAssertEqual([date1 compare:date2], NSOrderedDescending);
 }
 
 @end

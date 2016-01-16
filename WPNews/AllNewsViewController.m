@@ -10,7 +10,7 @@
 #import "NSAttributedString+HTML.h"
 #import "NewsArticleViewController.h"
 
-static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-srv/simulation/simulation_test.json";
+static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-srvz/simulation/simulation_test.json";
 
 typedef NS_ENUM(NSInteger, AllNewsViewSortStyle) {
     AllNewsViewSortStyleDate,
@@ -101,7 +101,12 @@ typedef NS_ENUM(NSInteger, AllNewsViewSortStyle) {
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:kWashingtonPostURLString]];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        [self updateNewsFromNetData:data];
+        if (data) {
+            [self updateNewsFromNetData:data];
+        }
+        else {
+            // TODO: Add code to display the error and disallow selection and view of non-existent details
+        }
     }] resume];
 }
 
@@ -172,7 +177,7 @@ typedef NS_ENUM(NSInteger, AllNewsViewSortStyle) {
     cell.textLabel.attributedText = title;
     cell.detailTextLabel.text = newsArticle[@"date"];
     cell.detailTextLabel.accessibilityIdentifier = @"date";
-    
+    cell.detailTextLabel.isAccessibilityElement = YES;
     return cell;
 }
 
