@@ -13,6 +13,7 @@ static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-s
 
 @interface AllNewsViewController ()
 @property (strong, nonatomic) NSArray* newsArticles;
+@property (weak, nonatomic) IBOutlet UITableView *newsArticlesTableView;
 @end
 
 @implementation AllNewsViewController
@@ -77,6 +78,7 @@ static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-s
     else {
         [self loadData];
     }
+    self.newsArticlesTableView.accessibilityIdentifier = @"news-article-table";
 }
 
 - (void)didReceiveMemoryWarning {
