@@ -175,6 +175,7 @@ typedef NS_ENUM(NSInteger, AllNewsViewSortStyle) {
     NSDictionary* newsArticle = self.newsArticles[indexPath.row];
     NSAttributedString* title = [NSAttributedString attributedStringFromHTMLString:newsArticle[@"title"]];
     cell.textLabel.attributedText = title;
+    cell.textLabel.accessibilityIdentifier = @"headline";
     cell.detailTextLabel.text = newsArticle[@"date"];
     cell.detailTextLabel.accessibilityIdentifier = @"date";
     cell.detailTextLabel.isAccessibilityElement = YES;

@@ -80,4 +80,16 @@
     XCTAssertEqual([date1 compare:date2], NSOrderedDescending);
 }
 
+- (void)testUponTappingSortByHeadlineSortIsCorrect {
+    [self.app.buttons[@"Main Headline"] tap];
+    
+    XCUIElement* article1Element = [self.app.tables[@"news-article-table"].cells elementBoundByIndex:0];
+    XCUIElement* article2Element = [self.app.tables[@"news-article-table"].cells elementBoundByIndex:1];
+    
+    NSString* article1HeadlineString = article1Element.staticTexts[@"headline"].label;
+    NSString* article2HeadlineString = article2Element.staticTexts[@"headline"].label;
+
+    XCTAssertEqual([article1HeadlineString compare:article2HeadlineString options:NSCaseInsensitiveSearch], NSOrderedAscending);
+}
+
 @end
