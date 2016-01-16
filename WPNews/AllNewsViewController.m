@@ -12,17 +12,51 @@
 
 static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-srv/simulation/simulation_test.json";
 
+typedef NS_ENUM(NSInteger, AllNewsViewSortStyle) {
+    AllNewsViewSortStyleDate,
+    AllNewsViewSortStyleHeadline,
+};
+
 @interface AllNewsViewController ()
 @property (strong, nonatomic) NSArray* newsArticles;
 @property (weak, nonatomic) IBOutlet UITableView *newsArticlesTableView;
+@property (weak, nonatomic) IBOutlet UIButton *sortByHeadlineButton;
+@property (weak, nonatomic) IBOutlet UIButton *sortByDateButton;
 @property (assign, nonatomic, getter=isTesting) BOOL testing;
+@property (assign, nonatomic) AllNewsViewSortStyle sortStyle;
 @end
 
 @implementation AllNewsViewController
 
+- (void)sortNewsArticles {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-dd-MM H:mm:ss"]; //2014-02-12 20:29:36
+    
+    NSArray* sortedNewsArticles = [_newsArticles sortedArrayUsingComparator:^NSComparisonResult(NSDictionary*  _Nonnull article1, NSDictionary*  _Nonnull article2) {
+        
+        switch (self.sortStyle) {
+            case AllNewsViewSortStyleHeadline:
+                return [article1[@"title"] compare:article2[@"title"] options:NSCaseInsensitiveSearch];
+                break;
+            case AllNewsViewSortStyleDate: {
+                NSDate *date1 = [dateFormat dateFromString:article1[@"date"]];
+                NSDate *date2 = [dateFormat dateFromString:article2[@"date"]];
+                return [date2 compare:date1];
+                break;
+            }
+            default:
+                break;
+        }
+        
+    }];
+    _newsArticles = sortedNewsArticles;
+}
+
 - (void)setNewsArticles:(NSArray *)newsArticles {
     if (_newsArticles != newsArticles) {
         _newsArticles = newsArticles;
+        
+        [self sortNewsArticles];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.newsArticlesTableView reloadData];
@@ -46,7 +80,7 @@ static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-s
     static dispatch_once_t tag;
     dispatch_once(&tag, ^{
         NSArray* launchArguments = [NSProcessInfo processInfo].arguments;
-        [launchArguments enumerateObjectsUsingBlock:^(NSString*  _Nonnull argument, NSUInteger idx, BOOL * _Nonnull stop) {
+        [launchArguments enumerateObjectsUsingBlock:^(NSString* _Nonnull argument, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([@"TESTING" isEqualToString:argument]) {
                 _testing = YES;
                 *stop = YES;
@@ -81,10 +115,33 @@ static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-s
     }
     self.newsArticlesTableView.dataSource = self;
     self.newsArticlesTableView.accessibilityIdentifier = @"news-article-table";
+    [self updateSortButtonEnableState];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)updateSortButtonEnableState {
+    self.sortByDateButton.enabled = (self.sortStyle != AllNewsViewSortStyleDate);
+    self.sortByHeadlineButton.enabled = (self.sortStyle != AllNewsViewSortStyleHeadline);
+}
+
+- (void)sortButtonTapped {
+    [self sortNewsArticles];
+    [self updateSortButtonEnableState];
+    [self.newsArticlesTableView reloadData];
+}
+
+- (IBAction)sortByDateButtonTapped:(id)sender {
+    self.sortStyle = AllNewsViewSortStyleDate;
+    self.sortByDateButton.enabled = NO;
+    [self sortButtonTapped];
+}
+
+- (IBAction)sortByHeadlineButtonTapped:(id)sender {
+    self.sortStyle = AllNewsViewSortStyleHeadline;
+    [self sortButtonTapped];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -110,8 +167,12 @@ static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-s
                                       reuseIdentifier:@"newsArticleTableViewCell"];
     }
     
-    NSAttributedString* title = [NSAttributedString attributedStringFromHTMLString:self.newsArticles[indexPath.row][@"title"]];
+    NSDictionary* newsArticle = self.newsArticles[indexPath.row];
+    NSAttributedString* title = [NSAttributedString attributedStringFromHTMLString:newsArticle[@"title"]];
     cell.textLabel.attributedText = title;
+    cell.detailTextLabel.text = newsArticle[@"date"];
+    cell.detailTextLabel.accessibilityIdentifier = @"date";
+    
     return cell;
 }
 

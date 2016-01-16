@@ -13,10 +13,10 @@
     NSData* htmlStringData = [htmlString dataUsingEncoding:NSUTF8StringEncoding];
     NSError* error = nil;
     NSAttributedString* attributedString = [[NSAttributedString alloc] initWithData:htmlStringData
-                                            options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-                                                      NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
-                                 documentAttributes:nil
-                                              error:&error];
+                                                                            options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                                                                                      NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
+                                                                 documentAttributes:nil
+                                                                              error:&error];
     if (!attributedString) {
         NSLog(@"Unable to convert string to attributed string: %@", error);
     }
