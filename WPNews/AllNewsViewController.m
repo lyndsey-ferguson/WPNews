@@ -22,7 +22,10 @@ static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-s
 - (void)setNewsArticles:(NSArray *)newsArticles {
     if (_newsArticles != newsArticles) {
         _newsArticles = newsArticles;
-        [self.newsArticlesTableView reloadData];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.newsArticlesTableView reloadData];
+        });
     }
 }
 
@@ -96,7 +99,7 @@ static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-s
                                       reuseIdentifier:@"newsArticleTableViewCell"];
     }
     
-    cell.textLabel.text = self.newsArticles[indexPath.row][@"title"];
+    cell.textLabel.attributedText = self.newsArticles[indexPath.row][@"title"];
     return cell;
 }
 
