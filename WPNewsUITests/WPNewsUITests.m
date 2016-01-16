@@ -92,4 +92,20 @@
     XCTAssertEqual([article1HeadlineString compare:article2HeadlineString options:NSCaseInsensitiveSearch], NSOrderedAscending);
 }
 
+- (void)testUponTappingSortByHeadlineThenTappingSortByDateAreSortedByDateDescending {
+    [self.app.buttons[@"Main Headline"] tap];
+    [self.app.buttons[@"Date"] tap];
+
+    XCUIElement* article1Element = [self.app.tables[@"news-article-table"].cells elementBoundByIndex:0];
+    XCUIElement* article2Element = [self.app.tables[@"news-article-table"].cells elementBoundByIndex:1];
+    
+    NSString* article1DateString = article1Element.staticTexts[@"date"].label;
+    NSString* article2DateString = article2Element.staticTexts[@"date"].label;
+    
+    NSDate *date1 = [self.dateFormat dateFromString:article1DateString];
+    NSDate *date2 = [self.dateFormat dateFromString:article2DateString];
+    
+    XCTAssertEqual([date1 compare:date2], NSOrderedDescending);
+}
+
 @end
