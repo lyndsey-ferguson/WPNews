@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		92540E001C4ADD7600704FEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92540DFF1C4ADD7600704FEC /* main.m */; };
+		92540E031C4ADD7600704FEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92540E021C4ADD7600704FEC /* AppDelegate.m */; };
+		92540E061C4ADD7600704FEC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92540E051C4ADD7600704FEC /* ViewController.m */; };
+		92540E091C4ADD7600704FEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92540E071C4ADD7600704FEC /* Main.storyboard */; };
+		92540E0B1C4ADD7600704FEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92540E0A1C4ADD7600704FEC /* Assets.xcassets */; };
+		92540E0E1C4ADD7600704FEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92540E0C1C4ADD7600704FEC /* LaunchScreen.storyboard */; };
+		92540E191C4ADD7700704FEC /* WPNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92540E181C4ADD7700704FEC /* WPNewsTests.m */; };
+		92540E241C4ADD7700704FEC /* WPNewsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92540E231C4ADD7700704FEC /* WPNewsUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		92540E151C4ADD7700704FEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92540DF31C4ADD7600704FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92540DFA1C4ADD7600704FEC;
+			remoteInfo = WPNews;
+		};
+		92540E201C4ADD7700704FEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92540DF31C4ADD7600704FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92540DFA1C4ADD7600704FEC;
+			remoteInfo = WPNews;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		92540DFB1C4ADD7600704FEC /* WPNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WPNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92540DFF1C4ADD7600704FEC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		92540E011C4ADD7600704FEC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		92540E021C4ADD7600704FEC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		92540E041C4ADD7600704FEC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		92540E051C4ADD7600704FEC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		92540E081C4ADD7600704FEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		92540E0A1C4ADD7600704FEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		92540E0D1C4ADD7600704FEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		92540E0F1C4ADD7600704FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92540E141C4ADD7700704FEC /* WPNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WPNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92540E181C4ADD7700704FEC /* WPNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPNewsTests.m; sourceTree = "<group>"; };
+		92540E1A1C4ADD7700704FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92540E1F1C4ADD7700704FEC /* WPNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WPNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92540E231C4ADD7700704FEC /* WPNewsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPNewsUITests.m; sourceTree = "<group>"; };
+		92540E251C4ADD7700704FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		92540DF81C4ADD7600704FEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92540E111C4ADD7700704FEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92540E1C1C4ADD7700704FEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		92540DF21C4ADD7600704FEC = {
+			isa = PBXGroup;
+			children = (
+				92540DFD1C4ADD7600704FEC /* WPNews */,
+				92540E171C4ADD7700704FEC /* WPNewsTests */,
+				92540E221C4ADD7700704FEC /* WPNewsUITests */,
+				92540DFC1C4ADD7600704FEC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		92540DFC1C4ADD7600704FEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92540DFB1C4ADD7600704FEC /* WPNews.app */,
+				92540E141C4ADD7700704FEC /* WPNewsTests.xctest */,
+				92540E1F1C4ADD7700704FEC /* WPNewsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92540DFD1C4ADD7600704FEC /* WPNews */ = {
+			isa = PBXGroup;
+			children = (
+				92540E011C4ADD7600704FEC /* AppDelegate.h */,
+				92540E021C4ADD7600704FEC /* AppDelegate.m */,
+				92540E041C4ADD7600704FEC /* ViewController.h */,
+				92540E051C4ADD7600704FEC /* ViewController.m */,
+				92540E071C4ADD7600704FEC /* Main.storyboard */,
+				92540E0A1C4ADD7600704FEC /* Assets.xcassets */,
+				92540E0C1C4ADD7600704FEC /* LaunchScreen.storyboard */,
+				92540E0F1C4ADD7600704FEC /* Info.plist */,
+				92540DFE1C4ADD7600704FEC /* Supporting Files */,
+			);
+			path = WPNews;
+			sourceTree = "<group>";
+		};
+		92540DFE1C4ADD7600704FEC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92540DFF1C4ADD7600704FEC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		92540E171C4ADD7700704FEC /* WPNewsTests */ = {
+			isa = PBXGroup;
+			children = (
+				92540E181C4ADD7700704FEC /* WPNewsTests.m */,
+				92540E1A1C4ADD7700704FEC /* Info.plist */,
+			);
+			path = WPNewsTests;
+			sourceTree = "<group>";
+		};
+		92540E221C4ADD7700704FEC /* WPNewsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				92540E231C4ADD7700704FEC /* WPNewsUITests.m */,
+				92540E251C4ADD7700704FEC /* Info.plist */,
+			);
+			path = WPNewsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92540DFA1C4ADD7600704FEC /* WPNews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92540E281C4ADD7700704FEC /* Build configuration list for PBXNativeTarget "WPNews" */;
+			buildPhases = (
+				92540DF71C4ADD7600704FEC /* Sources */,
+				92540DF81C4ADD7600704FEC /* Frameworks */,
+				92540DF91C4ADD7600704FEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WPNews;
+			productName = WPNews;
+			productReference = 92540DFB1C4ADD7600704FEC /* WPNews.app */;
+			productType = "com.apple.product-type.application";
+		};
+		92540E131C4ADD7700704FEC /* WPNewsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92540E2B1C4ADD7700704FEC /* Build configuration list for PBXNativeTarget "WPNewsTests" */;
+			buildPhases = (
+				92540E101C4ADD7700704FEC /* Sources */,
+				92540E111C4ADD7700704FEC /* Frameworks */,
+				92540E121C4ADD7700704FEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92540E161C4ADD7700704FEC /* PBXTargetDependency */,
+			);
+			name = WPNewsTests;
+			productName = WPNewsTests;
+			productReference = 92540E141C4ADD7700704FEC /* WPNewsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		92540E1E1C4ADD7700704FEC /* WPNewsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92540E2E1C4ADD7700704FEC /* Build configuration list for PBXNativeTarget "WPNewsUITests" */;
+			buildPhases = (
+				92540E1B1C4ADD7700704FEC /* Sources */,
+				92540E1C1C4ADD7700704FEC /* Frameworks */,
+				92540E1D1C4ADD7700704FEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92540E211C4ADD7700704FEC /* PBXTargetDependency */,
+			);
+			name = WPNewsUITests;
+			productName = WPNewsUITests;
+			productReference = 92540E1F1C4ADD7700704FEC /* WPNewsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92540DF31C4ADD7600704FEC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Lyndsey Ferguson Software";
+				TargetAttributes = {
+					92540DFA1C4ADD7600704FEC = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					92540E131C4ADD7700704FEC = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 92540DFA1C4ADD7600704FEC;
+					};
+					92540E1E1C4ADD7700704FEC = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 92540DFA1C4ADD7600704FEC;
+					};
+				};
+			};
+			buildConfigurationList = 92540DF61C4ADD7600704FEC /* Build configuration list for PBXProject "WPNews" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 92540DF21C4ADD7600704FEC;
+			productRefGroup = 92540DFC1C4ADD7600704FEC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92540DFA1C4ADD7600704FEC /* WPNews */,
+				92540E131C4ADD7700704FEC /* WPNewsTests */,
+				92540E1E1C4ADD7700704FEC /* WPNewsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92540DF91C4ADD7600704FEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92540E0E1C4ADD7600704FEC /* LaunchScreen.storyboard in Resources */,
+				92540E0B1C4ADD7600704FEC /* Assets.xcassets in Resources */,
+				92540E091C4ADD7600704FEC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92540E121C4ADD7700704FEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92540E1D1C4ADD7700704FEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92540DF71C4ADD7600704FEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92540E061C4ADD7600704FEC /* ViewController.m in Sources */,
+				92540E031C4ADD7600704FEC /* AppDelegate.m in Sources */,
+				92540E001C4ADD7600704FEC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92540E101C4ADD7700704FEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92540E191C4ADD7700704FEC /* WPNewsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92540E1B1C4ADD7700704FEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92540E241C4ADD7700704FEC /* WPNewsUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		92540E161C4ADD7700704FEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92540DFA1C4ADD7600704FEC /* WPNews */;
+			targetProxy = 92540E151C4ADD7700704FEC /* PBXContainerItemProxy */;
+		};
+		92540E211C4ADD7700704FEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92540DFA1C4ADD7600704FEC /* WPNews */;
+			targetProxy = 92540E201C4ADD7700704FEC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		92540E071C4ADD7600704FEC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92540E081C4ADD7600704FEC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		92540E0C1C4ADD7600704FEC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92540E0D1C4ADD7600704FEC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		92540E261C4ADD7700704FEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		92540E271C4ADD7700704FEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		92540E291C4ADD7700704FEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WPNews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lyndseyfergusonsoftware.WPNews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		92540E2A1C4ADD7700704FEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WPNews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lyndseyfergusonsoftware.WPNews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		92540E2C1C4ADD7700704FEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WPNewsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lyndseyfergusonsoftware.WPNewsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WPNews.app/WPNews";
+			};
+			name = Debug;
+		};
+		92540E2D1C4ADD7700704FEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WPNewsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lyndseyfergusonsoftware.WPNewsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WPNews.app/WPNews";
+			};
+			name = Release;
+		};
+		92540E2F1C4ADD7700704FEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WPNewsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lyndseyfergusonsoftware.WPNewsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WPNews;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		92540E301C4ADD7700704FEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WPNewsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lyndseyfergusonsoftware.WPNewsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WPNews;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		92540DF61C4ADD7600704FEC /* Build configuration list for PBXProject "WPNews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92540E261C4ADD7700704FEC /* Debug */,
+				92540E271C4ADD7700704FEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92540E281C4ADD7700704FEC /* Build configuration list for PBXNativeTarget "WPNews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92540E291C4ADD7700704FEC /* Debug */,
+				92540E2A1C4ADD7700704FEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		92540E2B1C4ADD7700704FEC /* Build configuration list for PBXNativeTarget "WPNewsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92540E2C1C4ADD7700704FEC /* Debug */,
+				92540E2D1C4ADD7700704FEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		92540E2E1C4ADD7700704FEC /* Build configuration list for PBXNativeTarget "WPNewsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92540E2F1C4ADD7700704FEC /* Debug */,
+				92540E301C4ADD7700704FEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 92540DF31C4ADD7600704FEC /* Project object */;
+}
