@@ -32,4 +32,9 @@
 - (void)testUponLoadTableViewVisible {
     XCTAssertTrue(self.app.tables[@"news-article-table"].exists);
 }
+
+- (void)testUponLoadTableViewHasCells {
+    XCTAssertGreaterThan(self.app.tables[@"news-article-table"].cells.count, 0);
+}
+
 @end

@@ -14,6 +14,7 @@ static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-s
 @interface AllNewsViewController ()
 @property (strong, nonatomic) NSArray* newsArticles;
 @property (weak, nonatomic) IBOutlet UITableView *newsArticlesTableView;
+@property (assign, nonatomic, getter=isTesting) BOOL testing;
 @end
 
 @implementation AllNewsViewController
@@ -21,7 +22,7 @@ static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-s
 - (void)setNewsArticles:(NSArray *)newsArticles {
     if (_newsArticles != newsArticles) {
         _newsArticles = newsArticles;
-        // todo: add table reload datacall
+        [self.newsArticlesTableView reloadData];
     }
 }
 
@@ -34,13 +35,10 @@ static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-s
 - (void)updateNewsFromNetData:(NSData *)data {
     self.newsArticles = [NSJSONSerialization JSONObjectWithData:data
                                                         options:kNilOptions
-                                                          error:nil];
+                                                          error:nil][@"posts"];
 }
 
 - (BOOL)isTesting {
-    return YES;
-    
-#if 0
     static dispatch_once_t tag;
     dispatch_once(&tag, ^{
         NSArray* launchArguments = [NSProcessInfo processInfo].arguments;
@@ -52,7 +50,6 @@ static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-s
         }];
     });
     return _testing;
-#endif
 }
 
 - (void)loadTestingData {
@@ -78,11 +75,29 @@ static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-s
     else {
         [self loadData];
     }
+    self.newsArticlesTableView.dataSource = self;
     self.newsArticlesTableView.accessibilityIdentifier = @"news-article-table";
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - UITableViewDataSource Methods
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.newsArticles.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"newsArticleTableViewCell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:@"newsArticleTableViewCell"];
+    }
+    
+    cell.textLabel.text = self.newsArticles[indexPath.row][@"title"];
+    return cell;
 }
 
 @end

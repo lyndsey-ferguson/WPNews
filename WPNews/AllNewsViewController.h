@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AllNewsViewController : UIViewController
+@interface AllNewsViewController : UIViewController <UITableViewDataSource>
 
 
 @end
