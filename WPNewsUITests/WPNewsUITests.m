@@ -37,4 +37,8 @@
     XCTAssertGreaterThan(self.app.tables[@"news-article-table"].cells.count, 0);
 }
 
+- (void)testUponLoadTableViewCellDisplaysLabels {
+    XCTAssertTrue(self.app.tables[@"news-article-table"].cells.staticTexts[@"Matt Drudge and Hillary Clinton: A History"].exists);
+}
+
 @end
