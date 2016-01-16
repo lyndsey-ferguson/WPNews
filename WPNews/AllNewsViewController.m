@@ -7,7 +7,7 @@
 //
 
 #import "AllNewsViewController.h"
-
+#import "NSAttributedString+HTML.h"
 
 static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-srv/simulation/simulation_test.json";
 
@@ -99,7 +99,8 @@ static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-s
                                       reuseIdentifier:@"newsArticleTableViewCell"];
     }
     
-    cell.textLabel.attributedText = self.newsArticles[indexPath.row][@"title"];
+    NSAttributedString* title = [NSAttributedString attributedStringFromHTMLString:self.newsArticles[indexPath.row][@"title"]];
+    cell.textLabel.attributedText = title;
     return cell;
 }
 

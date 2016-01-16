@@ -41,4 +41,9 @@
     XCTAssertTrue(self.app.tables[@"news-article-table"].cells.staticTexts[@"Matt Drudge and Hillary Clinton: A History"].exists);
 }
 
+- (void)testUponLoadTableViewCellDisplaysLabelWithNoHTMLCharacterCodes {
+    XCTAssertFalse(self.app.tables[@"news-article-table"].cells.staticTexts[@"How &#8216;Red Sox vs. Yankees&#8217; explains Connecticut politics"].exists);
+
+    XCTAssertTrue(self.app.tables[@"news-article-table"].cells.staticTexts[@"How ‘Red Sox vs. Yankees’ explains Connecticut politics"].exists);
+}
 @end
