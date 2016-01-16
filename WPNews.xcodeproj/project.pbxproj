@@ -16,6 +16,7 @@
 		92540E191C4ADD7700704FEC /* WPNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92540E181C4ADD7700704FEC /* WPNewsTests.m */; };
 		92540E241C4ADD7700704FEC /* WPNewsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92540E231C4ADD7700704FEC /* WPNewsUITests.m */; };
 		92540E341C4ADECF00704FEC /* mocked_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 92540E331C4ADECF00704FEC /* mocked_response.json */; };
+		92540E371C4AE9B600704FEC /* NewsArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92540E361C4AE9B600704FEC /* NewsArticleViewController.m */; };
 		92540E3A1C4AEA9300704FEC /* NSAttributedString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 92540E391C4AEA9300704FEC /* NSAttributedString+HTML.m */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,8 @@
 		92540E251C4ADD7700704FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92540E311C4ADE9F00704FEC /* instructions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instructions.png; sourceTree = "<group>"; };
 		92540E331C4ADECF00704FEC /* mocked_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mocked_response.json; sourceTree = "<group>"; };
+		92540E351C4AE9B600704FEC /* NewsArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsArticleViewController.h; sourceTree = "<group>"; };
+		92540E361C4AE9B600704FEC /* NewsArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsArticleViewController.m; sourceTree = "<group>"; };
 		92540E381C4AEA9300704FEC /* NSAttributedString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+HTML.h"; sourceTree = "<group>"; };
 		92540E391C4AEA9300704FEC /* NSAttributedString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+HTML.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,17 +110,18 @@
 		92540DFD1C4ADD7600704FEC /* WPNews */ = {
 			isa = PBXGroup;
 			children = (
+				92540E3B1C4AED9100704FEC /* Categories */,
 				92540E011C4ADD7600704FEC /* AppDelegate.h */,
 				92540E021C4ADD7600704FEC /* AppDelegate.m */,
 				92540E041C4ADD7600704FEC /* AllNewsViewController.h */,
 				92540E051C4ADD7600704FEC /* AllNewsViewController.m */,
+				92540E351C4AE9B600704FEC /* NewsArticleViewController.h */,
+				92540E361C4AE9B600704FEC /* NewsArticleViewController.m */,
 				92540E071C4ADD7600704FEC /* Main.storyboard */,
 				92540E0A1C4ADD7600704FEC /* Assets.xcassets */,
 				92540E0C1C4ADD7600704FEC /* LaunchScreen.storyboard */,
 				92540E0F1C4ADD7600704FEC /* Info.plist */,
 				92540DFE1C4ADD7600704FEC /* Supporting Files */,
-				92540E381C4AEA9300704FEC /* NSAttributedString+HTML.h */,
-				92540E391C4AEA9300704FEC /* NSAttributedString+HTML.m */,
 			);
 			path = WPNews;
 			sourceTree = "<group>";
@@ -148,6 +152,15 @@
 				92540E251C4ADD7700704FEC /* Info.plist */,
 			);
 			path = WPNewsUITests;
+			sourceTree = "<group>";
+		};
+		92540E3B1C4AED9100704FEC /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				92540E381C4AEA9300704FEC /* NSAttributedString+HTML.h */,
+				92540E391C4AEA9300704FEC /* NSAttributedString+HTML.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +296,7 @@
 			files = (
 				92540E061C4ADD7600704FEC /* AllNewsViewController.m in Sources */,
 				92540E031C4ADD7600704FEC /* AppDelegate.m in Sources */,
+				92540E371C4AE9B600704FEC /* NewsArticleViewController.m in Sources */,
 				92540E3A1C4AEA9300704FEC /* NSAttributedString+HTML.m in Sources */,
 				92540E001C4ADD7600704FEC /* main.m in Sources */,
 			);

@@ -8,6 +8,7 @@
 
 #import "AllNewsViewController.h"
 #import "NSAttributedString+HTML.h"
+#import "NewsArticleViewController.h"
 
 static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-srv/simulation/simulation_test.json";
 
@@ -86,6 +87,16 @@ static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-s
     [super didReceiveMemoryWarning];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"show-news-article"]) {
+        NewsArticleViewController* viewController = [segue destinationViewController];
+        
+        NSIndexPath* path = [self.newsArticlesTableView indexPathForSelectedRow];
+        NSString* content = self.newsArticles[path.row][@"content"];
+        viewController.htmlContent = content;
+    }
+}
+
 #pragma mark - UITableViewDataSource Methods
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -103,5 +114,6 @@ static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-s
     cell.textLabel.attributedText = title;
     return cell;
 }
+
 
 @end

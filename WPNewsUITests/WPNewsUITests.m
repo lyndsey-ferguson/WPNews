@@ -46,4 +46,19 @@
 
     XCTAssertTrue(self.app.tables[@"news-article-table"].cells.staticTexts[@"How ‘Red Sox vs. Yankees’ explains Connecticut politics"].exists);
 }
+
+- (void)testUponLoadTappingCellShowsDetailView {
+    [self.app.tables[@"news-article-table"].cells.staticTexts[@"Matt Drudge and Hillary Clinton: A History"] tap];
+    
+    NSPredicate* bodyContentElementExistsPredicate = [NSPredicate predicateWithFormat:@"exists = 1"];
+    [self expectationForPredicate:bodyContentElementExistsPredicate
+              evaluatedWithObject:self.app.textViews[@"body-text"]
+                          handler:nil];
+
+    [self waitForExpectationsWithTimeout:30 handler:nil];
+    
+    NSString* expectedContentSegment = @"An inverse relationship seems to exist between the length of time since a Clinton has orbited the White House and the power held by the mythology of Matt Drudge";
+    XCTAssertTrue([self.app.textViews[@"body-text"].value containsString:expectedContentSegment]);
+}
+
 @end
