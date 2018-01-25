@@ -10,7 +10,7 @@
 #import "NSAttributedString+HTML.h"
 #import "NewsArticleViewController.h"
 
-static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-srvz/simulation/simulation_test.json";
+static NSString* kWashingtonPostURLString = @"http://www.washingtonpost.com/wp-srv/simulation/simulation_test.json";
 
 typedef NS_ENUM(NSInteger, AllNewsViewSortStyle) {
     AllNewsViewSortStyleDate,
@@ -159,13 +159,33 @@ typedef NS_ENUM(NSInteger, AllNewsViewSortStyle) {
     }
 }
 
++ (NSAttributedString*)cleanUpTitleString:(NSAttributedString*)titleString {
+    NSMutableAttributedString* cleanedUpString = [titleString mutableCopy];
+    [cleanedUpString beginEditing];
+    __block BOOL found = NO;
+    
+    UIFont* systemFont = [UIFont systemFontOfSize:14];
+    [cleanedUpString enumerateAttribute:NSFontAttributeName
+                                inRange:NSMakeRange(0, cleanedUpString.length)
+                                options:0
+                             usingBlock:^(id value, NSRange range, BOOL *stop) {
+        if (value) {
+            [cleanedUpString removeAttribute:NSFontAttributeName range:range];
+            [cleanedUpString addAttribute:NSFontAttributeName value:systemFont range:range];
+            found = YES;
+        }
+    }];
+    [cleanedUpString endEditing];
+    return cleanedUpString;
+}
+
 #pragma mark - UITableViewDataSource Methods
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.newsArticles.count;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"newsArticleTableViewCell"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
@@ -174,7 +194,7 @@ typedef NS_ENUM(NSInteger, AllNewsViewSortStyle) {
     
     NSDictionary* newsArticle = self.newsArticles[indexPath.row];
     NSAttributedString* title = [NSAttributedString attributedStringFromHTMLString:newsArticle[@"title"]];
-    cell.textLabel.attributedText = title;
+    cell.textLabel.attributedText = [AllNewsViewController cleanUpTitleString:title];
     cell.textLabel.accessibilityIdentifier = @"headline";
     cell.detailTextLabel.text = newsArticle[@"date"];
     cell.detailTextLabel.accessibilityIdentifier = @"date";

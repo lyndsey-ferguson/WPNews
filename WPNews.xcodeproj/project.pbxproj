@@ -18,6 +18,7 @@
 		92540E341C4ADECF00704FEC /* mocked_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 92540E331C4ADECF00704FEC /* mocked_response.json */; };
 		92540E371C4AE9B600704FEC /* NewsArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92540E361C4AE9B600704FEC /* NewsArticleViewController.m */; };
 		92540E3A1C4AEA9300704FEC /* NSAttributedString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 92540E391C4AEA9300704FEC /* NSAttributedString+HTML.m */; };
+		92540E451C4B05FB00704FEC /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 92540E441C4B05FB00704FEC /* README.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		92540E361C4AE9B600704FEC /* NewsArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsArticleViewController.m; sourceTree = "<group>"; };
 		92540E381C4AEA9300704FEC /* NSAttributedString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+HTML.h"; sourceTree = "<group>"; };
 		92540E391C4AEA9300704FEC /* NSAttributedString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+HTML.m"; sourceTree = "<group>"; };
+		92540E441C4B05FB00704FEC /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = WPNews/README.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		92540DF21C4ADD7600704FEC = {
 			isa = PBXGroup;
 			children = (
+				92540E441C4B05FB00704FEC /* README.txt */,
 				92540DFD1C4ADD7600704FEC /* WPNews */,
 				92540E171C4ADD7700704FEC /* WPNewsTests */,
 				92540E221C4ADD7700704FEC /* WPNewsUITests */,
@@ -270,6 +273,7 @@
 				92540E341C4ADECF00704FEC /* mocked_response.json in Resources */,
 				92540E0B1C4ADD7600704FEC /* Assets.xcassets in Resources */,
 				92540E091C4ADD7600704FEC /* Main.storyboard in Resources */,
+				92540E451C4B05FB00704FEC /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
